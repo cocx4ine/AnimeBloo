@@ -20,7 +20,11 @@
 
 ## Overview
 
-AnimeBloo is a minimal desktop app for discovering, organizing, and watching anime on Windows and Linux. Browse the catalog, choose a series, and move through its episodes in one place. For each episode, you can select the available Sub or Dub version, audio track, and subtitles. Your viewing history helps you pick up where you left off, with progress kept in sync for a smooth watching experience.
+AnimeBloo is a minimal desktop app for discovering, organizing, and watching anime on Windows and Linux. Browse the catalog, choose a series, and move through its episodes in one place. For each episode, you can select the available Sub or Dub version, audio track, and subtitles. Your viewing history helps you pick up where you left off.
+
+### Preview
+
+![AnimeBloo launcher showing trending anime, new episodes, and recommendations](preview.png)
 
 ## Features
 
