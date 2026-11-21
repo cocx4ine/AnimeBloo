@@ -68,4 +68,8 @@ AnimeBloo is an independent project. It is not affiliated, associated, authorize
 
 ## License
 
-AnimeBloo is available under the [MIT License](LICENSE).
+## License
+
+Copyright © 2026 AnimeBloo. All rights reserved.
+
+The source code is proprietary. No permission is granted to copy, modify, or redistribute it without prior written authorization.
