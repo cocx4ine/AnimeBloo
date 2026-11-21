@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, height=820" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { width: 1280px; height: 820px; margin: 0; overflow: hidden; background: #f6f7f9; }
+      #splash { width: 100%; height: 100%; background: #f6f7f9; font-family: "Segoe UI", Arial, sans-serif; }
+      .scene-content { width: 100%; height: 100%; padding: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
+      .mark-area { width: 264px; height: 264px; display: grid; place-items: center; position: relative; }
+      .logo { position: relative; width: 192px; height: 192px; object-fit: contain; filter: drop-shadow(0 12px 26px #588de433); }
+      .wordmark { margin: 0; font-size: 88px; line-height: 1.1; letter-spacing: -.055em; font-weight: 780; white-space: nowrap; }
+      .anime { color: #0f1115; display: inline-block; }
+      .bloo { color: #588de4; display: inline-block; }
+    </style>
+  </head>
+  <body>
+    <div id="splash" data-composition-id="animebloo-splash-light" data-start="0" data-duration="2.8" data-width="1280" data-height="820">
+      <div class="scene-content" id="lockup">
+        <div class="mark-area">
+          <img class="logo" src="assets/logo/animebloo.svg" alt="AnimeBloo logo" />
+        </div>
+        <h1 class="wordmark"><span class="anime">Anime</span><span class="bloo">Bloo</span></h1>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from('.logo', { opacity: 0, scale: .72, y: 34, rotation: -10, duration: 1.08, ease: 'expo.out' }, .12);
+      tl.from('.anime', { opacity: 0, x: -24, y: 9, duration: .72, ease: 'power3.out' }, .82);
+      tl.from('.bloo', { opacity: 0, x: 22, y: 9, duration: .76, ease: 'expo.out' }, 1.12);
+      tl.to('#lockup', { opacity: 0, y: -10, scale: .985, duration: .44, ease: 'power2.in' }, 2.36);
+      window.__timelines['animebloo-splash-light'] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
+
