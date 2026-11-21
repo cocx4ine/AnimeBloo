@@ -1,0 +1,122 @@
+.settings-page{max-width:840px;margin:42px auto 0}
+.account-identity{display:flex;align-items:center;gap:17px;min-width:0}
+.account-avatar{width:60px;height:60px;flex:none;border-radius:19px;object-fit:cover;background:var(--selected)}
+.account-name{display:block;max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text);font-size:16px;font-weight:750}
+.account-description{margin-top:5px!important}
+.settings-page{display:flex;flex-direction:column;gap:16px}
+.settings-intro h1{font-size:clamp(46px,5vw,70px);letter-spacing:-.065em;line-height:1.05;margin:22px 0}
+.settings-intro h1 em{font-style:normal;color:var(--accent)}
+.settings-intro p{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 34px}
+.settings-card{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:142px;padding:30px 32px;border:1px solid var(--border);border-radius:24px;background:var(--surface);box-shadow:0 15px 40px var(--shadow)}
+.settings-copy h2{margin:0 0 9px;color:var(--text);font-size:17px;letter-spacing:-.03em}
+.settings-copy p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.language-picker{position:relative;flex:none;z-index:2}
+.language-trigger{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:182px;min-height:46px;padding:0 14px;border:1px solid var(--border);border-radius:12px;background:var(--bg);color:var(--text);font-size:13px;font-weight:650;text-align:left;transition:background-color .2s,border-color .2s}
+.language-trigger:hover,.language-trigger[aria-expanded="true"]{background:var(--hover);border-color:var(--accent)}
+.language-current{flex:1}
+.language-chevron,.upscale-chevron{display:block;width:16px;height:16px;flex-shrink:0;fill:none;stroke:var(--accent-color,var(--accent));stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;shape-rendering:geometricPrecision;vertical-align:middle}
+.language-menu{position:absolute;top:calc(100% + 9px);right:0;width:205px;padding:6px;border:1px solid var(--border);border-radius:15px;background:var(--surface);box-shadow:0 18px 40px #1c36592b;transform-origin:top right;will-change:transform,opacity}
+.language-menu[hidden]{display:none}
+.language-menu.opens-up{top:auto;bottom:calc(100% + 9px);transform-origin:bottom right}
+.language-option{display:flex;align-items:center;justify-content:space-between;width:100%;height:39px;padding:0 12px;border:0;border-radius:9px;background:transparent;color:var(--text);font-size:12px;text-align:left}
+.language-option:hover,.language-option:focus-visible{background:var(--hover)}
+.language-option.is-selected{color:var(--accent);background:var(--selected);font-weight:700}
+.language-check{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex-shrink:0;color:var(--accent);font-size:16px;line-height:1}
+.settings-error{margin:15px 4px;color:#ae3440;font-size:12px}
+.settings-error[hidden]{display:none}
+.cache-size{color:var(--accent);font-size:inherit;font-weight:750;white-space:nowrap}
+.cache-button.is-clearing{color:var(--accent)}
+.cache-button.is-complete{background:var(--selected);border-color:var(--accent);color:var(--accent)}
+.cache-status{min-height:16px;margin:0 4px;color:var(--accent);font-size:12px}
+.cache-status:empty{display:none}
+.cache-status.is-error{color:#ae3440}
+@media(max-width:1050px){.settings-card{align-items:flex-start;flex-direction:column}.language-trigger{width:205px}}
+@media(prefers-reduced-motion:reduce){.language-menu{will-change:auto}}
+.theme-switcher{position:relative;isolation:isolate;display:flex;align-items:center;flex:none;padding:5px;border:1px solid var(--border);border-radius:18px;background:var(--input);box-shadow:inset 0 1px 2px #00000008}
+.theme-indicator{position:absolute;z-index:0;top:5px;left:0;height:calc(100% - 10px);border:1px solid var(--border);border-radius:13px;background:var(--surface);box-shadow:0 3px 10px var(--shadow);pointer-events:none}
+.theme-option{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:90px;height:38px;padding:0 12px;border:0;border-radius:13px;background:transparent;color:var(--muted);font-size:12px;font-weight:650;white-space:nowrap;transition:color .2s}
+.theme-option:last-child{min-width:116px}
+.theme-option:hover,.theme-option.is-selected{color:var(--text)}
+.theme-option.is-selected{font-weight:750}
+.theme-icon{width:17px;height:17px;flex:none;transform-origin:center}
+.theme-option.is-selected .theme-icon{color:var(--accent)}
+@media(max-width:1050px){.theme-switcher{max-width:100%}}
+@media(prefers-reduced-motion:reduce){.theme-option{transition:none}}
+.upscale-card{overflow:visible;transition:border-color .25s}
+.upscale-card.is-enabled{border-color:rgba(var(--accent-rgb), 0.502)}
+.upscale-card .settings-copy h2{display:flex;align-items:center;gap:10px}
+.upscale-beta{padding:3px 6px;border:1px solid rgba(var(--accent-rgb), 0.459);border-radius:5px;color:var(--accent);font-size:9px;font-weight:800;letter-spacing:.08em}
+.upscale-credit{display:block;margin-top:13px;color:var(--muted);font-size:10px}
+.upscale-actions{display:flex;align-items:flex-end;flex-direction:column;gap:14px;flex:none}
+.upscale-switch{display:inline-flex;align-items:center;gap:10px;color:var(--text);font-size:12px;font-weight:650;cursor:pointer}
+.upscale-switch input{position:absolute;opacity:0;width:1px;height:1px}
+.upscale-switch-track{display:flex;align-items:center;width:39px;height:23px;padding:3px;border:1px solid var(--border);border-radius:99px;background:var(--input);transition:background-color .2s,border-color .2s}
+.upscale-switch-track span{width:16px;height:16px;border-radius:50%;background:var(--muted);transition:transform .2s,background-color .2s}
+.upscale-switch input:checked+.upscale-switch-track{background:var(--accent);border-color:var(--accent)}
+.upscale-switch input:checked+.upscale-switch-track span{transform:translateX(16px);background:white}
+.upscale-switch input:focus-visible+.upscale-switch-track{outline:2px solid var(--accent);outline-offset:3px}
+.upscale-picker{position:relative;z-index:3}
+.upscale-trigger{display:flex;justify-content:space-between;align-items:center;gap:16px;min-width:190px;min-height:44px;padding:0 13px;border:1px solid var(--border);border-radius:11px;background:var(--bg);color:var(--text);font-size:12px;font-weight:650;text-align:left}
+.upscale-trigger:hover,.upscale-trigger[aria-expanded="true"]{border-color:var(--accent)}
+.upscale-trigger svg{margin-left:auto}
+.upscale-menu{position:absolute;top:calc(100% + 7px);right:0;width:205px;padding:5px;border:1px solid var(--border);border-radius:12px;background:var(--surface);box-shadow:0 16px 36px #0006;transform-origin:top right;will-change:transform,opacity}
+.upscale-menu[hidden]{display:none}
+.upscale-option{display:flex;align-items:center;justify-content:space-between;width:100%;padding:10px;border:0;border-radius:8px;background:transparent;color:var(--text);font-size:12px;text-align:left}
+.upscale-option:hover,.upscale-option:focus-visible{background:var(--hover)}
+.upscale-option.is-selected{background:var(--selected);color:var(--accent);font-weight:700}
+@media(max-width:1050px){.upscale-actions{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){.upscale-menu{will-change:auto}.upscale-switch-track,.upscale-switch-track span{transition:none}}
+
+/* Keep open pickers above subsequent cards, including during the entrance animation. */
+.settings-card:focus-within{z-index:4}
+.settings-copy{min-width:0;overflow-wrap:anywhere}
+.cache-size{font-variant-numeric:tabular-nums}
+@media(max-width:580px){
+  .settings-card{padding:24px 20px;gap:20px}
+  .account-identity{width:100%}
+  .account-identity .settings-copy{flex:1}
+  .account-name{max-width:100%}
+  .theme-switcher{width:100%}
+  .theme-option,.theme-option:last-child{min-width:0;flex:1;padding:0 6px;gap:5px;font-size:11px}
+}
+
+/* Compact trigger; the dedicated editor uses the dialog top layer. */
+.theme-card{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center}
+.accent-editor{grid-column:1/-1;width:100%;border-top:1px solid var(--border);padding-top:22px}
+.accent-summary{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.accent-editor h3{margin:0 0 6px;font-size:13px;font-weight:650}
+.accent-trigger{display:flex;align-items:center;gap:12px;flex:none;min-height:44px;padding:0 13px;border:1px solid var(--border);border-radius:11px;background:var(--input);color:var(--text);font-family:inherit;font-size:12px;font-weight:650;transition:border-color .2s,background .2s}
+.accent-trigger:hover{border-color:var(--accent);background:var(--hover)}
+.accent-trigger-swatch{width:20px;height:20px;border-radius:6px;background:var(--accent-color);border:1px solid var(--muted)}
+.accent-trigger svg,.accent-close svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.accent-trigger svg{color:var(--muted)}
+.accent-saved-status{margin:9px 0 0;font-size:11px;color:var(--muted)}
+.accent-saved-status:empty{display:none}
+@media(max-width:1050px){.theme-card{grid-template-columns:1fr}.accent-editor{grid-column:1}}
+@media(max-width:580px){.accent-summary{align-items:flex-start;flex-direction:column}}
+/* Shared launcher controls across settings cards. */
+.settings-action{display:inline-flex;align-items:center;justify-content:center;align-self:center;flex:none;min-width:142px;min-height:44px;padding:0 19px;border:1px solid var(--border);border-radius:12px;background:var(--input);color:var(--text);font-family:inherit;font-size:12px;font-weight:700;line-height:1.5;white-space:normal;text-align:center;box-shadow:none;transition:background-color .2s,border-color .2s,color .2s,box-shadow .2s}
+.settings-action:hover:not(:disabled){background:var(--hover);border-color:var(--accent-color)}
+.settings-action:disabled{background:var(--input);border-color:var(--border);color:var(--muted);opacity:.65;box-shadow:none;cursor:default}
+.settings-action.cache-button.is-complete{background:var(--selected);border-color:var(--accent-color);color:var(--accent-color)}
+.language-trigger,.upscale-trigger{min-height:44px;border-radius:12px;background:var(--input);font-size:12px;font-weight:650}
+.accent-saved-status{font-size:12px;line-height:1.5}
+@media(max-width:1050px){.settings-action{align-self:flex-start}}
+.settings-page button,.settings-page input,.settings-page select,.settings-page textarea{font-family:inherit}
+
+/* Lift the whole card above subsequent cards, including during GSAP entrance. */
+.upscale-card:has([aria-expanded="true"]){z-index:20}
+.upscale-actions{max-width:100%}
+.upscale-trigger{max-width:100%;cursor:pointer}
+.upscale-menu{width:310px;max-width:calc(100vw - 64px);z-index:30;pointer-events:auto}
+.upscale-option{cursor:pointer;min-height:44px;gap:12px}
+.language-trigger,.upscale-trigger{align-items:center;line-height:1}
+.language-current,.upscale-trigger [data-upscale-current]{min-width:0;line-height:1.25}
+.language-trigger{width:220px;max-width:100%;white-space:nowrap}
+.language-current{overflow:hidden;text-overflow:ellipsis}
+.language-menu{width:220px;max-width:calc(100vw - 64px);max-height:min(360px,70vh);overflow-y:auto}
+.language-option{justify-content:flex-start;min-height:39px;height:auto;line-height:1.25;white-space:nowrap}
+.upscale-trigger [data-upscale-current]{white-space:nowrap}
+.upscale-option{white-space:nowrap}
+.upscale-option>span:last-child{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex-shrink:0;line-height:1}
+.theme-icon,.accent-trigger svg{display:block;flex-shrink:0}

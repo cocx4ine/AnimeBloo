@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="AnimeBloo artwork placeholder">
+  <rect width="1280" height="720" fill="#090a0d"/>
+  <path d="M0 719 1280 0M-260 720 1020 0" stroke="#588de4" stroke-opacity=".08" stroke-width="2"/>
+  <rect x="582" y="292" width="116" height="116" rx="28" fill="#588de4" fill-opacity=".12" stroke="#588de4" stroke-opacity=".55" stroke-width="2"/>
+  <path d="m629 321 37 29-37 29z" fill="#588de4"/>
+  <text x="640" y="467" text-anchor="middle" fill="#a9b4c7" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="5">ANIMEBLOO</text>
+</svg>

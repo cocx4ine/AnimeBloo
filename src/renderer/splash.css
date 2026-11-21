@@ -1,0 +1,14 @@
+.splash-active .app-shell { visibility: hidden; }
+.splash-overlay { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; overflow: hidden; background: #090a0d; }
+[data-theme="light"] .splash-overlay { background: #f6f7f9; }
+.splash-overlay[hidden] { display: none; }
+.splash-overlay video { width: 100%; height: 100%; object-fit: cover; }
+.splash-overlay video[hidden] { display: none; }
+.splash-fallback { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; color: #f6f7f9; font: 780 clamp(48px, 7vw, 88px)/1.1 "Segoe UI", Arial, sans-serif; letter-spacing: -.055em; }
+.splash-fallback[hidden] { display: none; }
+.splash-fallback img { width: min(24vw, 192px); height: min(24vw, 192px); object-fit: contain; }
+.splash-anime { color: #f6f7f9; }
+[data-theme="light"] .splash-anime { color: #090a0d; }
+.splash-bloo { color: var(--accent); }
+img.brand-mark { width: 22px; height: 22px; border-radius: 0; background: none; transform: none; box-shadow: none; }
+.stage-logo { width: 176px; height: 176px; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 20px 28px rgba(var(--accent-rgb), 0.302)); }

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>document.documentElement.dataset.theme = window.animeBloo.initialTheme.resolved;</script>
+    <title>AnimeBloo</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./splash.css" />
+    <link rel="stylesheet" href="./settings.css" />
+    <link rel="stylesheet" href="./auth.css" />
+    <link rel="stylesheet" href="./update.css" />
+    <link rel="stylesheet" href="./catalog.css" />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./bookmarks.css" />
+    <link rel="stylesheet" href="./history.css" />
+    <link rel="stylesheet" href="./appearance.css" />
+    <script defer src="./renderer.bundle.js"></script>
+  </head>
+  <body class="splash-active">
+    <div class="splash-overlay" id="splash-overlay" role="img" aria-label="AnimeBloo" aria-live="off">
+      <div class="splash-fallback" id="splash-fallback">
+        <img src="../../assets/logo/animebloo.svg" alt="" />
+        <span><span class="splash-anime">Anime</span><span class="splash-bloo">Bloo</span></span>
+      </div>
+      <video id="splash-video" muted playsinline preload="auto" hidden aria-hidden="true"></video>
+    </div>
+    <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3.5 10 8.5-7 8.5 7v9a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M9 21v-7h6v7"/></symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></symbol>
+      <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M12 20.8C11.5 20.8 10.9 20.4 10.3 20C7.6 18.1 2.3 13.6 2.3 8.8C2.3 5.7 4.6 3.4 7.6 3.4C9.5 3.4 11 4.3 12 5.8C13 4.3 14.5 3.4 16.4 3.4C19.4 3.4 21.7 5.7 21.7 8.8C21.7 13.6 16.4 18.1 13.7 20C13.1 20.4 12.5 20.8 12 20.8Z"/></symbol>
+      <symbol id="icon-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.6-6.4M3 4v4.8h4.8"/><path d="M12 7v5l3.5 2"/></symbol>
+      <symbol id="icon-update" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="icon-sparkle" viewBox="0 0 24 24"><path d="m12 2 1.9 7.1L21 11l-7.1 1.9L12 20l-1.9-7.1L3 11l7.1-1.9zM19 18l.6 1.4L21 20l-1.4.6L19 22l-.6-1.4L17 20l1.4-.6z"/></symbol>
+    </svg>
+
+    <section class="auth-screen" id="auth-screen" lang="en" aria-labelledby="auth-title" hidden inert>
+      <header class="titlebar auth-titlebar">
+        <div class="titlebar-drag"><img class="brand-mark" src="../../assets/logo/animebloo.svg" alt="" /><span class="titlebar-name">Anime<span class="accent-wordmark">Bloo</span></span></div>
+        <div class="window-controls" data-i18n-aria="windowControls" aria-label="Window controls">
+          <button class="window-control" type="button" data-window-action="minimize" data-i18n-aria="minimize" aria-label="Minimize window"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+          <button class="window-control" type="button" data-window-action="maximize" data-i18n-aria="maximize" aria-label="Maximize window"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="3.5" width="9" height="9" rx="1"/></svg></button>
+          <button class="window-control close-control" type="button" data-window-action="close" data-i18n-aria="close" aria-label="Close window"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8"/></svg></button>
+        </div>
+      </header>
+      <div class="auth-center"><div class="auth-card">
+        <div class="auth-logo"><img src="../../assets/logo/animebloo.svg" alt="" /></div>
+        <span class="auth-eyebrow" data-i18n="authEyebrow">ANILIST ACCOUNT</span>
+        <h1 id="auth-title" data-i18n="authTitle">Connect to AnimeBloo</h1>
+        <p class="auth-description" data-i18n="authDescription">Connect your AniList account to continue.</p>
+        <button class="auth-open" id="auth-open" type="button" data-i18n="authOpen">Sign in with AniList</button>
+        <p class="auth-instructions" data-i18n="authInstructions">Authorize in your browser, copy the token from the AniList PIN page, then paste it below.</p>
+        <form id="auth-form" class="auth-form">
+          <label for="auth-token" data-i18n="authTokenLabel">AniList token</label>
+          <div class="auth-input-row"><input id="auth-token" type="password" autocomplete="off" spellcheck="false" data-i18n-placeholder="authTokenPlaceholder" placeholder="Paste your token" required /><button class="auth-connect" type="submit" data-i18n="authConnect">Connect / Confirm</button></div>
+        </form>
+        <p class="auth-status" id="auth-status" role="alert" aria-live="polite"></p>
+      </div></div>
+    </section>
+
+    <div class="app-shell" inert aria-hidden="true">
+      <header class="titlebar">
+        <div class="titlebar-drag">
+          <img class="brand-mark" src="../../assets/logo/animebloo.svg" alt="" aria-hidden="true" />
+          <span class="titlebar-name">Anime<span class="accent-wordmark">Bloo</span></span>
+        </div>
+        <div class="window-controls" data-i18n-aria="windowControls" aria-label="Window controls">
+          <button class="window-control" type="button" data-window-action="minimize" data-i18n-aria="minimize" aria-label="Minimize window"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+          <button class="window-control" type="button" data-window-action="maximize" aria-label="Maximize window"><svg class="maximize-icon" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="3.5" width="9" height="9" rx="1"/></svg></button>
+          <button class="window-control close-control" type="button" data-window-action="close" data-i18n-aria="close" aria-label="Close window"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8"/></svg></button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <aside class="sidebar">
+          <span class="nav-indicator" aria-hidden="true"></span>
+          <nav class="navigation" data-i18n-aria="navigation" aria-label="Main navigation">
+            <button class="nav-item is-active" type="button" data-page="home" data-i18n-aria="home" aria-label="Home" title="Home" aria-current="page"><svg class="nav-icon" aria-hidden="true"><use href="#icon-home"/></svg></button>
+            <button class="nav-item" type="button" data-page="search" data-i18n-aria="search" aria-label="Search" title="Search"><svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg></button>
+            <button class="nav-item" type="button" data-page="bookmarks" data-i18n-aria="bookmarks" aria-label="Bookmarks" title="Bookmarks"><span class="favorite-icon nav-heart-container" aria-hidden="true"><svg class="nav-icon nav-heart-icon" viewBox="0 0 24 24" shape-rendering="geometricPrecision"><use href="#icon-heart"/></svg></span></button>
+            <button class="nav-item" type="button" data-page="history" data-i18n-aria="history" aria-label="History" title="History"><svg class="nav-icon" aria-hidden="true"><use href="#icon-history"/></svg></button>
+            <button class="nav-item" type="button" data-page="update" data-i18n-aria="update" aria-label="Update" title="Update"><svg class="nav-icon" aria-hidden="true"><use href="#icon-update"/></svg></button>
+          </nav>
+          <div class="sidebar-bottom">
+            <button class="nav-btn" data-nav="settings" aria-label="Settings">
+              <svg class="settings-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </aside>
+
+        <main class="main-content" id="main-content" tabindex="-1">
+          <div class="update-banner" role="status" aria-live="polite" hidden>
+            <span class="update-banner-icon" aria-hidden="true"><svg><use href="#icon-update"/></svg></span>
+            <div class="update-banner-copy"><span class="update-banner-message"></span><p class="update-banner-summary"></p></div>
+            <button class="update-banner-button" type="button" data-i18n="updateAction">Update</button>
+          </div>
+          <section class="page-content" aria-live="polite"></section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

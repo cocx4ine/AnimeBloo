@@ -1,0 +1,29 @@
+.splash-active .auth-screen{visibility:hidden}
+.auth-screen{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;background:#f6f7f9;color:#090a0d}
+.auth-screen[hidden]{display:none}
+.auth-titlebar{background:#f6f7f9;border-bottom-color:#e5eaf2}
+.auth-screen .window-control{color:#687385}
+.auth-screen .window-control:hover{background:#e9eef5;color:#090a0d}
+.auth-center{flex:1;min-height:0;display:grid;place-items:center;padding:24px;overflow:auto}
+.auth-card{width:min(100%,570px);padding:44px 48px 42px;border:1px solid #e5eaf2;border-radius:28px;background:#fff;box-shadow:0 22px 60px #1c365912;text-align:center;will-change:transform,opacity}
+.auth-logo{width:64px;height:64px;margin:0 auto 23px;border-radius:19px;display:grid;place-items:center;background:#edf4ff}
+.auth-logo img{width:46px;height:46px}
+.auth-eyebrow{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.15em}
+.auth-card h1{margin:13px 0 10px;font-size:clamp(29px,3vw,39px);line-height:1.12;letter-spacing:-.055em}
+.auth-description,.auth-instructions{color:#687385;font-size:13px;line-height:1.6}
+.auth-description{margin:0 0 26px}
+.auth-open,.auth-connect{border:0;border-radius:13px;background:var(--accent);color:white;font-weight:700;box-shadow:0 8px 18px rgba(var(--accent-rgb), 0.169);transition:background-color .2s}
+.auth-open:hover,.auth-connect:hover:not(:disabled){background:var(--accent-dark)}
+.auth-open{width:100%;min-height:49px;font-size:14px}
+.auth-instructions{margin:23px auto 24px;max-width:400px}
+.auth-form{text-align:left}
+.auth-form label{display:block;margin:0 0 9px;font-size:12px;font-weight:700}
+.auth-input-row{display:flex;gap:10px}
+.auth-input-row input{min-width:0;flex:1;height:48px;padding:0 15px;border:1px solid #dce4ef;border-radius:12px;background:#f6f7f9;color:#090a0d;font:inherit;font-size:13px;outline:none}
+.auth-input-row input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb), 0.137)}
+.auth-connect{flex:none;min-width:150px;padding:0 14px;font-size:12px}
+.auth-connect:disabled{opacity:.7;cursor:wait}
+.auth-status{min-height:18px;margin:15px 0 0;color:#ae3440;font-size:12px;text-align:left}
+.auth-status:empty{visibility:hidden}
+@media(max-width:600px){.auth-card{padding:30px 24px}.auth-input-row{flex-direction:column}.auth-connect{height:46px}}
+@media(prefers-reduced-motion:reduce){.auth-card{will-change:auto}}
